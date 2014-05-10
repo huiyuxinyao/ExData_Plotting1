@@ -1,0 +1,7 @@
+datetime<-strptime(paste(newdata$Date,newdata$Time),"%d/%m/%Y %H:%M:%S")
+datetimeframe<-data.frame(datetime)
+newlydata<-cbind(newdata,datetimeframe)
+par(mar=c(5,7,5,5))
+plot(newlydata$datetime,newlydata$Global_active_power,type="l",ylab="Global Active Power(kilowatts)",xlab="")
+dev.copy(png,file="plot2.png")
+dev.off()
